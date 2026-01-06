@@ -8,14 +8,19 @@ interface BadgeProps {
 export function Badge({ type }: BadgeProps) {
   const { t } = useTranslation()
 
-  const styles = {
-    new: 'bg-[--color-terracotta] text-white shadow-sm shadow-[--color-terracotta]/30',
-    popular: 'bg-[--color-gold] text-[--color-brown] shadow-sm shadow-[--color-gold]/30',
-    seasonal: 'bg-[--color-olive] text-white shadow-sm shadow-[--color-olive]/30'
+  const getClassName = () => {
+    switch (type) {
+      case 'popular':
+        return 'badge badge-popular'
+      case 'seasonal':
+        return 'badge badge-seasonal'
+      default:
+        return 'badge badge-popular'
+    }
   }
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase ${styles[type]}`}>
+    <span className={getClassName()}>
       {t(`promotions.${type}`)}
     </span>
   )

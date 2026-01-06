@@ -169,7 +169,7 @@ export function CartDrawer() {
                 {/* WhatsApp Order */}
                 <button
                   onClick={handleWhatsAppOrder}
-                  className="w-full min-h-[48px] flex items-center justify-center gap-2.5 py-3 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#20BD5A] transition-colors"
+                  className="w-full min-h-[52px] flex items-center justify-center gap-2.5 px-5 py-4 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#20BD5A] transition-colors"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
                   <span>{t('cart.orderViaWhatsapp')}</span>
@@ -178,7 +178,7 @@ export function CartDrawer() {
                 {/* Clear cart */}
                 <button
                   onClick={clearCart}
-                  className="w-full py-2.5 text-sm text-red-500 font-medium hover:bg-red-50 rounded-lg transition-colors"
+                  className="w-full py-3 text-sm text-red-500 font-medium hover:bg-red-50 rounded-lg transition-colors"
                 >
                   {t('cart.clear')}
                 </button>

@@ -14,13 +14,13 @@ export function MenuGrid() {
   }, [activeCategory])
 
   return (
-    <section id="menu" className="py-12 md:py-16 bg-[--color-cream]">
+    <section id="menu" className="menu-section">
       {/* Section header */}
-      <div className="max-w-6xl mx-auto px-5 md:px-8 mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-[--color-brown]">
+      <div className="menu-header">
+        <h2 className="menu-title">
           {t('nav.menu')}
         </h2>
-        <div className="mt-3 w-12 h-1 rounded-full bg-gradient-to-r from-[--color-olive] to-[--color-gold]" />
+        <div className="menu-underline" />
       </div>
 
       {/* Category tabs */}
@@ -30,19 +30,17 @@ export function MenuGrid() {
       />
 
       {/* Grid */}
-      <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-8 mt-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
-          {filteredItems.map((item, index) => (
-            <MenuCard key={item.id} item={item} index={index} />
-          ))}
-        </div>
+      <div className="menu-grid">
+        {filteredItems.map((item, index) => (
+          <MenuCard key={item.id} item={item} index={index} />
+        ))}
       </div>
 
       {/* Empty state */}
       {filteredItems.length === 0 && (
-        <div className="text-center py-16 text-[--color-brown-light]">
-          <span className="text-5xl mb-3 block opacity-30">🍽️</span>
-          <p className="font-medium">No items in this category</p>
+        <div style={{textAlign: 'center', padding: '4rem 0', color: 'var(--color-brown-light)'}}>
+          <span style={{fontSize: '3rem', display: 'block', marginBottom: '0.75rem', opacity: 0.3}}>🍽️</span>
+          <p style={{fontWeight: 500}}>No items in this category</p>
         </div>
       )}
     </section>
