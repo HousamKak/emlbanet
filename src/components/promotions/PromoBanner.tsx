@@ -13,15 +13,15 @@ export function PromoBanner() {
   if (promoItems.length === 0) return null
 
   return (
-    <section className="py-8 md:py-10 bg-white">
-      <div className="px-5 md:px-8 mb-5 md:mb-6">
-        <h2 className="text-lg md:text-xl font-bold text-[--color-brown]">
+    <section className="promo-section">
+      <div className="promo-header">
+        <h2 className="promo-title">
           {t('promotions.title')}
         </h2>
       </div>
 
-      <div className="px-5 md:px-8">
-        <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-3">
+      <div className="promo-scroll">
+        <div className="promo-scroll-inner">
           {promoItems.map(item => {
             const name = language === 'ar' ? item.nameAr : item.nameEn
 
@@ -29,30 +29,29 @@ export function PromoBanner() {
               <a
                 key={item.id}
                 href="#menu"
-                className="flex-shrink-0 w-36 md:w-40 bg-[--color-cream] rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-200"
+                className="promo-card"
               >
-                <div className="relative aspect-square">
+                <div className="promo-card-image">
                   {item.image ? (
                     <img
                       src={item.image}
                       alt={name}
-                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="w-full h-full bg-[--color-cream-dark] flex items-center justify-center">
-                      <span className="text-2xl opacity-30">🍽️</span>
+                    <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                      <span style={{fontSize: '2rem', opacity: 0.3}}>🍽️</span>
                     </div>
                   )}
                   {item.badges && item.badges[0] && (
-                    <div className="absolute top-2 start-2">
+                    <div className="promo-card-badge">
                       <Badge type={item.badges[0]} />
                     </div>
                   )}
                 </div>
-                <div className="p-3 space-y-1">
-                  <p className="text-sm font-semibold text-[--color-brown] leading-snug truncate">{name}</p>
-                  <p className="text-sm font-bold text-[--color-olive]">${item.price}</p>
+                <div className="promo-card-body">
+                  <p className="promo-card-title">{name}</p>
+                  <p className="promo-card-price">${item.price}</p>
                 </div>
               </a>
             )

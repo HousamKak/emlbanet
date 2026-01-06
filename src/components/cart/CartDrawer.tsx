@@ -52,7 +52,7 @@ export function CartDrawer() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+            className="cart-backdrop"
             onClick={closeCart}
           />
 
@@ -62,29 +62,29 @@ export function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: isRtl ? '-100%' : '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed top-0 end-0 h-full w-full max-w-sm bg-white z-50 shadow-2xl flex flex-col"
+            className="cart-drawer"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-[--color-cream-dark]">
-              <h2 className="text-xl font-bold text-[--color-brown]">{t('cart.title')}</h2>
+            <div className="cart-header">
+              <h2>{t('cart.title')}</h2>
               <button
                 onClick={closeCart}
-                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[--color-cream] transition-colors"
+                className="cart-close-button"
                 aria-label="Close cart"
               >
-                <CloseIcon className="w-5 h-5 text-[--color-brown]" />
+                <CloseIcon style={{width: '1.25rem', height: '1.25rem', color: 'var(--color-brown)'}} />
               </button>
             </div>
 
             {/* Items */}
-            <div className="flex-1 overflow-y-auto p-4">
+            <div className="cart-items">
               {items.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full text-[--color-brown-light]">
-                  <span className="text-5xl mb-3 opacity-30">🛒</span>
-                  <p className="font-medium">{t('cart.empty')}</p>
+                <div className="cart-empty">
+                  <span className="cart-empty-icon">🛒</span>
+                  <p style={{fontWeight: 500}}>{t('cart.empty')}</p>
                 </div>
               ) : (
-                <div className="space-y-3">
+                <div className="cart-items-list">
                   {items.map((item, index) => {
                     const name = language === 'ar' ? item.menuItem.nameAr : item.menuItem.nameEn
                     const options = item.selectedOptions
@@ -97,56 +97,55 @@ export function CartDrawer() {
                     return (
                       <div
                         key={`${item.menuItem.id}-${item.selectedOptions.join(',')}-${index}`}
-                        className="flex gap-3 bg-[--color-cream] rounded-xl p-3"
+                        className="cart-item"
                       >
                         {/* Image */}
-                        <div className="w-16 h-16 rounded-lg overflow-hidden bg-white flex-shrink-0">
+                        <div className="cart-item-image">
                           {item.menuItem.image ? (
                             <img
                               src={item.menuItem.image}
                               alt={name}
-                              className="w-full h-full object-cover"
                             />
                           ) : (
-                            <div className="w-full h-full flex items-center justify-center">
-                              <span className="text-xl opacity-30">🍽️</span>
+                            <div style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                              <span style={{fontSize: '1.25rem', opacity: 0.3}}>🍽️</span>
                             </div>
                           )}
                         </div>
 
                         {/* Details */}
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-[--color-brown] text-sm truncate">{name}</h3>
+                        <div className="cart-item-details">
+                          <h3 className="cart-item-title">{name}</h3>
                           {options.length > 0 && (
-                            <p className="text-xs text-[--color-brown-light] truncate mt-0.5">
+                            <p className="cart-item-options">
                               {options.join(', ')}
                             </p>
                           )}
-                          <p className="text-[--color-olive] font-bold text-sm mt-1">
+                          <p className="cart-item-price">
                             ${getItemPrice(item)}
                           </p>
 
                           {/* Quantity Controls */}
-                          <div className="flex items-center gap-2 mt-2">
+                          <div className="cart-quantity-controls">
                             <button
                               onClick={() => updateQuantity(item.menuItem.id, item.selectedOptions, item.quantity - 1)}
-                              className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-[--color-cream-dark] transition-colors"
+                              className="cart-quantity-button"
                             >
-                              <MinusIcon className="w-3.5 h-3.5" />
+                              <MinusIcon style={{width: '0.875rem', height: '0.875rem'}} />
                             </button>
-                            <span className="w-6 text-center font-semibold text-sm">{item.quantity}</span>
+                            <span className="cart-quantity-value">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.menuItem.id, item.selectedOptions, item.quantity + 1)}
-                              className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-[--color-cream-dark] transition-colors"
+                              className="cart-quantity-button"
                             >
-                              <PlusIcon className="w-3.5 h-3.5" />
+                              <PlusIcon style={{width: '0.875rem', height: '0.875rem'}} />
                             </button>
 
                             <button
                               onClick={() => removeItem(item.menuItem.id, item.selectedOptions)}
-                              className="ms-auto w-8 h-8 flex items-center justify-center text-red-500 hover:bg-red-50 rounded-full transition-colors"
+                              className="cart-remove-button"
                             >
-                              <TrashIcon className="w-4 h-4" />
+                              <TrashIcon style={{width: '1rem', height: '1rem'}} />
                             </button>
                           </div>
                         </div>
@@ -159,26 +158,26 @@ export function CartDrawer() {
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="p-4 border-t border-[--color-cream-dark] bg-white space-y-3">
+              <div className="cart-footer">
                 {/* Total */}
-                <div className="flex items-center justify-between">
-                  <span className="text-[--color-brown] font-medium">{t('cart.total')}</span>
-                  <span className="text-xl font-bold text-[--color-olive]">${total}</span>
+                <div className="cart-total">
+                  <span className="cart-total-label">{t('cart.total')}</span>
+                  <span className="cart-total-value">${total}</span>
                 </div>
 
                 {/* WhatsApp Order */}
                 <button
                   onClick={handleWhatsAppOrder}
-                  className="w-full min-h-[52px] flex items-center justify-center gap-2.5 px-5 py-4 rounded-xl bg-[#25D366] text-white font-semibold hover:bg-[#20BD5A] transition-colors"
+                  className="cart-whatsapp-button"
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
+                  <WhatsAppIcon style={{width: '1.25rem', height: '1.25rem'}} />
                   <span>{t('cart.orderViaWhatsapp')}</span>
                 </button>
 
                 {/* Clear cart */}
                 <button
                   onClick={clearCart}
-                  className="w-full py-3 text-sm text-red-500 font-medium hover:bg-red-50 rounded-lg transition-colors"
+                  className="cart-clear-button"
                 >
                   {t('cart.clear')}
                 </button>
