@@ -11,8 +11,8 @@ export function CategoryTabs({ activeCategory, onCategoryChange }: CategoryTabsP
 
   return (
     <div className="sticky top-16 md:top-20 z-30 bg-white/95 backdrop-blur-md border-b border-[--color-cream-dark]">
-      <div className="px-4 md:px-6 lg:px-8 py-3">
-        <div className="flex gap-2 overflow-x-auto hide-scrollbar">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-3">
+        <div className="flex gap-2 overflow-x-auto hide-scrollbar md:justify-center">
           {categories.map((category) => (
             <button
               key={category.id}
