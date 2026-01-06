@@ -19,7 +19,7 @@ export interface MenuItem {
   unit: Unit
   serves?: number
   category: Category
-  image: string
+  image?: string
   options?: ItemOption[]
   badges?: Badge[]
 }

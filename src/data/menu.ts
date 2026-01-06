@@ -10,7 +10,7 @@ export const menuItems: MenuItem[] = [
     unit: 'plate',
     serves: 6,
     category: 'salads',
-    image: '/images/menu/Fatoush 6ppl - 15$.jpeg',
+    image: '/images/menu/fatoush.jpeg',
     badges: ['popular']
   },
   {
@@ -20,7 +20,7 @@ export const menuItems: MenuItem[] = [
     price: 7,
     unit: 'plate',
     category: 'salads',
-    image: '/images/menu/check ref 3.jpeg'
+    image: '/images/menu/mutabal.jpeg'
   },
   {
     id: 'hummus',
@@ -39,7 +39,7 @@ export const menuItems: MenuItem[] = [
     price: 15,
     unit: 'kg',
     category: 'stuffed',
-    image: '/images/menu/check ref 1.jpeg',
+    image: '/images/menu/grape-leaves.jpeg',
     options: [
       { id: 'cooked', nameAr: 'مطبوخ', nameEn: 'Cooked', priceModifier: 5 }
     ],
@@ -52,7 +52,7 @@ export const menuItems: MenuItem[] = [
     price: 20,
     unit: 'kg',
     category: 'stuffed',
-    image: '/images/menu/check ref 1.jpeg',
+    image: '/images/menu/grape-leaves.jpeg',
     options: [
       { id: 'cooked', nameAr: 'مطبوخ', nameEn: 'Cooked', priceModifier: 5 }
     ]
@@ -65,7 +65,7 @@ export const menuItems: MenuItem[] = [
     unit: 'plate',
     serves: 4,
     category: 'stuffed',
-    image: '/images/menu/شيخ المحشي + رز ٤ اشخاص - 25$.jpeg',
+    image: '/images/menu/sheikh-mahshi.jpeg',
     badges: ['popular']
   },
 
@@ -77,7 +77,7 @@ export const menuItems: MenuItem[] = [
     price: 8,
     unit: 'dozen',
     category: 'kibbeh',
-    image: '/images/menu/صفيحة دزينة 6$.jpeg',
+    image: '/images/menu/sfiha.jpeg',
     options: [
       { id: 'fried', nameAr: 'مقلي', nameEn: 'Fried', priceModifier: 2 }
     ],
@@ -103,7 +103,7 @@ export const menuItems: MenuItem[] = [
     price: 3,
     unit: 'dozen',
     category: 'pastries',
-    image: '/images/menu/سبانغ 3$.jpeg'
+    image: '/images/menu/spinach-fatayer.jpeg'
   },
   {
     id: 'fatayer-lamb',
@@ -112,7 +112,7 @@ export const menuItems: MenuItem[] = [
     price: 6,
     unit: 'dozen',
     category: 'pastries',
-    image: '/images/menu/check ref 4.jpeg'
+    image: '/images/menu/fatayer-lamb.jpeg'
   },
   {
     id: 'sfiha',
@@ -121,7 +121,7 @@ export const menuItems: MenuItem[] = [
     price: 6,
     unit: 'dozen',
     category: 'pastries',
-    image: '/images/menu/صفيحة دزينة 6$.jpeg',
+    image: '/images/menu/sfiha.jpeg',
     badges: ['popular']
   },
 
@@ -133,7 +133,7 @@ export const menuItems: MenuItem[] = [
     price: 35,
     unit: 'item',
     category: 'desserts',
-    image: '/images/menu/Bûche de noël 40cm - 35$.jpeg',
+    image: '/images/menu/buche-noel.jpeg',
     badges: ['seasonal']
   },
   {
@@ -144,7 +144,7 @@ export const menuItems: MenuItem[] = [
     unit: 'item',
     serves: 20,
     category: 'desserts',
-    image: '/images/menu/تارت ٢٠ شخص 25$.jpeg'
+    image: '/images/menu/fruit-tart.jpeg'
   }
 ]
 
