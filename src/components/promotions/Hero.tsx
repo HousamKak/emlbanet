@@ -7,7 +7,7 @@ export function Hero() {
   const { language } = useLanguage()
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[80vh] overflow-hidden bg-gradient-to-b from-[--color-cream] to-white">
+    <section className="relative min-h-[60vh] md:min-h-[68vh] overflow-hidden bg-gradient-to-b from-[--color-cream] to-white flex items-center">
       {/* Subtle decorative blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-32 -end-32 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-[--color-olive]/[0.04] blur-3xl" />
@@ -15,7 +15,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 pt-12 md:pt-20 pb-16 md:pb-24">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 py-12 md:py-16 w-full">
         <div className="flex flex-col items-center text-center">
 
           {/* Logo */}
@@ -56,7 +56,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-[--color-brown] mb-4 md:mb-5 leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-bold text-[--color-brown] mb-4 md:mb-5 leading-snug"
           >
             {t('hero.title')}
           </motion.h1>
@@ -66,7 +66,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg md:text-2xl font-medium text-[--color-terracotta] mb-5 md:mb-6"
+            className="text-lg md:text-2xl font-medium text-[--color-terracotta] leading-relaxed mb-6 md:mb-7"
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -86,7 +86,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 w-full max-w-md"
           >
             <a
               href="#menu"
@@ -116,7 +116,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.7 }}
-            className="mt-12 md:mt-16 flex flex-wrap items-center justify-center gap-6 text-sm text-[--color-brown-light]"
+            className="mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-5 md:gap-6 text-sm text-[--color-brown-light]"
           >
             <div className="flex items-center gap-2">
               <span className="text-[--color-gold]">★★★★★</span>

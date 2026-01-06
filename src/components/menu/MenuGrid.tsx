@@ -14,13 +14,13 @@ export function MenuGrid() {
   }, [activeCategory])
 
   return (
-    <section id="menu" className="py-10 md:py-14 bg-[--color-cream]">
+    <section id="menu" className="py-12 md:py-16 bg-[--color-cream]">
       {/* Section header */}
-      <div className="max-w-6xl mx-auto px-5 md:px-8 mb-6">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-[--color-brown]">
           {t('nav.menu')}
         </h2>
-        <div className="mt-2 w-12 h-1 rounded-full bg-gradient-to-r from-[--color-olive] to-[--color-gold]" />
+        <div className="mt-3 w-12 h-1 rounded-full bg-gradient-to-r from-[--color-olive] to-[--color-gold]" />
       </div>
 
       {/* Category tabs */}
@@ -30,8 +30,8 @@ export function MenuGrid() {
       />
 
       {/* Grid */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 mt-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 lg:px-8 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
           {filteredItems.map((item, index) => (
             <MenuCard key={item.id} item={item} index={index} />
           ))}

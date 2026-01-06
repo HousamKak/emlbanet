@@ -13,15 +13,15 @@ export function PromoBanner() {
   if (promoItems.length === 0) return null
 
   return (
-    <section className="py-6 bg-white">
-      <div className="px-5 md:px-8 mb-4">
+    <section className="py-8 md:py-10 bg-white">
+      <div className="px-5 md:px-8 mb-5 md:mb-6">
         <h2 className="text-lg md:text-xl font-bold text-[--color-brown]">
           {t('promotions.title')}
         </h2>
       </div>
 
-      <div className="px-4 md:px-6">
-        <div className="flex gap-3 overflow-x-auto hide-scrollbar pb-2">
+      <div className="px-5 md:px-8">
+        <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-3">
           {promoItems.map(item => {
             const name = language === 'ar' ? item.nameAr : item.nameEn
 
@@ -29,7 +29,7 @@ export function PromoBanner() {
               <a
                 key={item.id}
                 href="#menu"
-                className="flex-shrink-0 w-32 md:w-36 bg-[--color-cream] rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-200"
+                className="flex-shrink-0 w-36 md:w-40 bg-[--color-cream] rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-200"
               >
                 <div className="relative aspect-square">
                   {item.image ? (
@@ -50,8 +50,8 @@ export function PromoBanner() {
                     </div>
                   )}
                 </div>
-                <div className="p-2.5">
-                  <p className="text-sm font-semibold text-[--color-brown] truncate">{name}</p>
+                <div className="p-3 space-y-1">
+                  <p className="text-sm font-semibold text-[--color-brown] leading-snug truncate">{name}</p>
                   <p className="text-sm font-bold text-[--color-olive]">${item.price}</p>
                 </div>
               </a>
