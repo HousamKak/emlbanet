@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #9ACD32;
+  --color-primary-dark: #7CB518;
+  --color-secondary: #6B4423;
+  --color-accent: #E07B6A;
+  --color-cream: #FDF8F3;
+  --color-golden: #D4A84B;
+
+  --font-family-arabic: 'Cairo', sans-serif;
+  --font-family-english: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-arabic);
+  background-color: var(--color-cream);
+  color: var(--color-secondary);
+  min-height: 100vh;
+}
+
+[dir="ltr"] body {
+  font-family: var(--font-family-english);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Hide scrollbar for category tabs on mobile */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animation for cart drawer */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRtl {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+[dir="rtl"] .slide-in {
+  animation: slideInRtl 0.3s ease-out;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Circular image frame like logo */
+.circular-frame {
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 4px 15px rgba(154, 205, 50, 0.2);
+}
+
+/* Dotted border like logo */
+.dotted-border {
+  border: 2px dotted var(--color-primary);
+  border-radius: 50%;
+}

@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "إم البنات",
+    "tagline": "أكل بيت عالطلب",
+    "description": "من محاشي، فوارغ، كبب، رقاقات، سمبوسك، ميزة، وأطيب حلويات"
+  },
+  "nav": {
+    "menu": "القائمة",
+    "promotions": "العروض",
+    "contact": "تواصل معنا"
+  },
+  "categories": {
+    "all": "الكل",
+    "salads": "سلطات ومقبلات",
+    "stuffed": "محاشي",
+    "kibbeh": "كبب ومقالي",
+    "pastries": "فطاير ومعجنات",
+    "desserts": "حلويات"
+  },
+  "menu": {
+    "addToCart": "أضف للطلب",
+    "perKg": "للكيلو",
+    "perDozen": "للدزينة",
+    "perPlate": "للصحن",
+    "serves": "تكفي {{count}} أشخاص",
+    "options": "خيارات"
+  },
+  "options": {
+    "cooked": "مطبوخ",
+    "uncooked": "بدون طبخ",
+    "fried": "مقلي",
+    "unfried": "بدون قلي"
+  },
+  "cart": {
+    "title": "طلبك",
+    "empty": "السلة فارغة",
+    "total": "المجموع",
+    "orderViaWhatsapp": "اطلب عبر واتساب",
+    "clear": "إفراغ السلة",
+    "remove": "إزالة",
+    "quantity": "الكمية"
+  },
+  "promotions": {
+    "title": "عروض خاصة",
+    "new": "جديد",
+    "popular": "الأكثر طلباً",
+    "seasonal": "موسمي"
+  },
+  "contact": {
+    "phone": "اتصل بنا",
+    "whatsapp": "واتساب",
+    "instagram": "تابعنا على انستغرام",
+    "location": "لاقونا ببيروت"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة",
+    "madeWith": "صنع بحب"
+  },
+  "hero": {
+    "title": "إم البنات",
+    "subtitle": "أكل بيت عالطلب",
+    "cta": "اطلع على القائمة",
+    "catering": "طلبية عالذوق للمناسبات والأفراح والتوصيل متوفر"
+  }
+}

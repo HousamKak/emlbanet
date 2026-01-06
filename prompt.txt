@@ -1,0 +1,17 @@
+I want you to create a website for a small business called em lbanet which means in arabic mother of girls. I want
+  the site to support both arabic and english. I have given you the logo so the site should be inspired by it. Mainly
+  it is a kitchen. I want kind of a menu site, I will supply the images and the prices and the deals, and i want you
+  to build a site around that. People can scroll through the Menu and deals. People can choose food or deals to get
+  the total sum. Make it mobile first design, we want it to work on mobiles amazingly before working on the web, and
+  of course make it responsive web design. I need you to setup CICD on github actions. I will later give you the cmake
+  for the website dns. We do not want a backend for the time being. I have provided you with a folder called images.
+  each image will be named by its name and its price in dollars. I will also provide a text document that have the
+  deals. I will provide you with poster as well, read all the data we have in this directory. Also link to instagram
+  social media, we want to have the best design for a menu and store with promotions and stuff. I want you to plan the
+  design properly. make the site easy to add things to in code when we have new pictures. social media link
+  https://www.instagram.com/em.elbanet_, logo also provided as logo, there is also poster, I want you to design site
+  properly, later will add more food items, kepe a section for promotions, design the website properly and suggest designs and things I missed
+the website should be a proper react project with vite, am note sure how to handle images, should we compress them. put them on drive somewhere and load them? whatever is faster, those 
+should also be part of design decisions you should do. site should not be complicated and comprehensive, just enough for the requirements. read the logo and the poster to understand the visual identity.
+ Your role now is to digest this prompt and all the input provided
+in this directory and generate a comprehensive plan that I will review. 

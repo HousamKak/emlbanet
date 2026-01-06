@@ -1,0 +1,65 @@
+{
+  "brand": {
+    "name": "Em Elbanet",
+    "tagline": "Homemade Food",
+    "description": "Stuffed dishes, kibbeh, pastries, sambousa, mezze, and delicious desserts"
+  },
+  "nav": {
+    "menu": "Menu",
+    "promotions": "Deals",
+    "contact": "Contact Us"
+  },
+  "categories": {
+    "all": "All",
+    "salads": "Salads & Mezze",
+    "stuffed": "Stuffed Dishes",
+    "kibbeh": "Kibbeh & Fried",
+    "pastries": "Pastries",
+    "desserts": "Desserts"
+  },
+  "menu": {
+    "addToCart": "Add to Order",
+    "perKg": "per kg",
+    "perDozen": "per dozen",
+    "perPlate": "per plate",
+    "serves": "Serves {{count}}",
+    "options": "Options"
+  },
+  "options": {
+    "cooked": "Cooked",
+    "uncooked": "Uncooked",
+    "fried": "Fried",
+    "unfried": "Unfried"
+  },
+  "cart": {
+    "title": "Your Order",
+    "empty": "Cart is empty",
+    "total": "Total",
+    "orderViaWhatsapp": "Order via WhatsApp",
+    "clear": "Clear Cart",
+    "remove": "Remove",
+    "quantity": "Quantity"
+  },
+  "promotions": {
+    "title": "Special Offers",
+    "new": "New",
+    "popular": "Popular",
+    "seasonal": "Seasonal"
+  },
+  "contact": {
+    "phone": "Call Us",
+    "whatsapp": "WhatsApp",
+    "instagram": "Follow us on Instagram",
+    "location": "Find us in Beirut"
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "madeWith": "Made with love"
+  },
+  "hero": {
+    "title": "Em Elbanet",
+    "subtitle": "Homemade Food",
+    "cta": "View Menu",
+    "catering": "Catering for occasions and events. Delivery available"
+  }
+}
