@@ -165,15 +165,6 @@ export function CartDrawer() {
                   <span className="cart-total-value">${total}</span>
                 </div>
 
-                {/* WhatsApp Order */}
-                <button
-                  onClick={handleWhatsAppOrder}
-                  className="cart-whatsapp-button"
-                >
-                  <WhatsAppIcon style={{width: '1.25rem', height: '1.25rem'}} />
-                  <span>{t('cart.orderViaWhatsapp')}</span>
-                </button>
-
                 {/* Clear cart */}
                 <button
                   onClick={clearCart}

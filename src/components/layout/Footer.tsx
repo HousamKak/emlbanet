@@ -15,37 +15,19 @@ export function Footer() {
         {/* Contact Links */}
         <div className="footer-links">
           <a
-            href={`tel:+961${PHONE}`}
-            className="footer-link"
-          >
-            <PhoneIcon style={{width: '1.25rem', height: '1.25rem'}} />
-            <span>{t('contact.phone')}</span>
-          </a>
-
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            <WhatsAppIcon style={{width: '1.25rem', height: '1.25rem'}} />
-            <span>{t('contact.whatsapp')}</span>
-          </a>
-
-          <a
             href={INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"
           >
-            <InstagramIcon style={{width: '1.25rem', height: '1.25rem'}} />
-            <span>@em.elbanet_</span>
+            <InstagramIcon className="footer-instagram-icon" />
+            <span>em.elbanet_</span>
           </a>
         </div>
 
         {/* Location */}
         <div className="footer-location">
-          <LocationIcon style={{width: '1.125rem', height: '1.125rem', display: 'inline', marginRight: '0.5rem'}} />
+          <LocationIcon className="footer-location-icon" />
           <span>{t('contact.location')}</span>
         </div>
 
