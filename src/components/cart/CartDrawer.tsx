@@ -2,45 +2,12 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'motion/react'
 import { useCart } from '../../context/CartContext'
 import { useLanguage } from '../../context/LanguageContext'
-import { CloseIcon, TrashIcon, WhatsAppIcon, MinusIcon, PlusIcon } from '../common/Icons'
-
-const PHONE = '961712593589'
+import { CloseIcon, TrashIcon, MinusIcon, PlusIcon } from '../common/Icons'
 
 export function CartDrawer() {
   const { t } = useTranslation()
   const { language, isRtl } = useLanguage()
   const { items, isOpen, total, closeCart, clearCart, updateQuantity, removeItem, getItemPrice } = useCart()
-
-  const generateWhatsAppMessage = () => {
-    let message = language === 'ar'
-      ? `مرحبا! أود طلب التالي:\n------------------\n`
-      : `Hello! I would like to order:\n------------------\n`
-
-    items.forEach(item => {
-      const name = language === 'ar' ? item.menuItem.nameAr : item.menuItem.nameEn
-      const options = item.selectedOptions
-        .map(optId => {
-          const opt = item.menuItem.options?.find(o => o.id === optId)
-          return opt ? (language === 'ar' ? opt.nameAr : opt.nameEn) : ''
-        })
-        .filter(Boolean)
-        .join(', ')
-
-      const optionText = options ? ` (${options})` : ''
-      const price = getItemPrice(item)
-      message += `- ${name}${optionText} x${item.quantity} - $${price}\n`
-    })
-
-    message += `------------------\n`
-    message += language === 'ar' ? `المجموع: $${total}` : `Total: $${total}`
-
-    return encodeURIComponent(message)
-  }
-
-  const handleWhatsAppOrder = () => {
-    const message = generateWhatsAppMessage()
-    window.open(`https://wa.me/${PHONE}?text=${message}`, '_blank')
-  }
 
   return (
     <AnimatePresence>
@@ -72,7 +39,7 @@ export function CartDrawer() {
                 className="cart-close-button"
                 aria-label="Close cart"
               >
-                <CloseIcon style={{width: '1.25rem', height: '1.25rem', color: 'var(--color-brown)'}} />
+                <CloseIcon className="w-5 h-5" />
               </button>
             </div>
 
@@ -131,21 +98,21 @@ export function CartDrawer() {
                               onClick={() => updateQuantity(item.menuItem.id, item.selectedOptions, item.quantity - 1)}
                               className="cart-quantity-button"
                             >
-                              <MinusIcon style={{width: '0.875rem', height: '0.875rem'}} />
+                              <MinusIcon className="w-3.5 h-3.5" />
                             </button>
                             <span className="cart-quantity-value">{item.quantity}</span>
                             <button
                               onClick={() => updateQuantity(item.menuItem.id, item.selectedOptions, item.quantity + 1)}
                               className="cart-quantity-button"
                             >
-                              <PlusIcon style={{width: '0.875rem', height: '0.875rem'}} />
+                              <PlusIcon className="w-3.5 h-3.5" />
                             </button>
 
                             <button
                               onClick={() => removeItem(item.menuItem.id, item.selectedOptions)}
                               className="cart-remove-button"
                             >
-                              <TrashIcon style={{width: '1rem', height: '1rem'}} />
+                              <TrashIcon className="w-4 h-4" />
                             </button>
                           </div>
                         </div>

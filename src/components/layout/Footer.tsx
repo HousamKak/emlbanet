@@ -1,9 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import { PhoneIcon, InstagramIcon, WhatsAppIcon, LocationIcon } from '../common/Icons'
+import { InstagramIcon, LocationIcon } from '../common/Icons'
 
-const PHONE = '71259389'
 const INSTAGRAM = 'https://www.instagram.com/em.elbanet_'
-const WHATSAPP = `https://wa.me/961${PHONE}`
 
 export function Footer() {
   const { t } = useTranslation()
