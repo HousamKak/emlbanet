@@ -14,26 +14,35 @@ export function MenuGrid() {
   }, [activeCategory])
 
   return (
-    <section id="menu" className="py-6">
-      <h2 className="text-2xl font-bold text-[--color-secondary] mb-4 px-4">
-        {t('nav.menu')}
-      </h2>
+    <section id="menu" className="py-8 md:py-12">
+      {/* Section header */}
+      <div className="px-5 md:px-8 mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-[--color-brown]">
+          {t('nav.menu')}
+        </h2>
+        <div className="mt-2 w-12 h-1 rounded-full bg-gradient-to-r from-[--color-olive] to-[--color-gold]" />
+      </div>
 
+      {/* Category tabs */}
       <CategoryTabs
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 px-4">
-        {filteredItems.map(item => (
-          <MenuCard key={item.id} item={item} />
-        ))}
+      {/* Grid */}
+      <div className="px-4 md:px-6 lg:px-8 mt-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
+          {filteredItems.map((item, index) => (
+            <MenuCard key={item.id} item={item} index={index} />
+          ))}
+        </div>
       </div>
 
+      {/* Empty state */}
       {filteredItems.length === 0 && (
-        <div className="text-center py-12 text-[--color-secondary]/60">
-          <span className="text-4xl mb-2 block">🍽️</span>
-          <p>No items in this category</p>
+        <div className="text-center py-16 text-[--color-brown-light]">
+          <span className="text-5xl mb-3 block opacity-30">🍽️</span>
+          <p className="font-medium">No items in this category</p>
         </div>
       )}
     </section>

@@ -9,13 +9,13 @@ export function Badge({ type }: BadgeProps) {
   const { t } = useTranslation()
 
   const styles = {
-    new: 'bg-[--color-accent] text-white',
-    popular: 'bg-[--color-golden] text-white',
-    seasonal: 'bg-[--color-primary] text-white'
+    new: 'bg-[--color-terracotta] text-white shadow-sm shadow-[--color-terracotta]/30',
+    popular: 'bg-[--color-gold] text-[--color-brown] shadow-sm shadow-[--color-gold]/30',
+    seasonal: 'bg-[--color-olive] text-white shadow-sm shadow-[--color-olive]/30'
   }
 
   return (
-    <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${styles[type]}`}>
+    <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase ${styles[type]}`}>
       {t(`promotions.${type}`)}
     </span>
   )
