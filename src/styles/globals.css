@@ -19,6 +19,13 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-arabic: 'Tajawal', 'Arial', sans-serif;
   --font-body: 'Outfit', 'Tajawal', sans-serif;
+
+  /* Tailwind Color Utilities */
+  --color-olive-DEFAULT: #6B7B4C;
+  --color-terracotta-DEFAULT: #C4704B;
+  --color-gold-DEFAULT: #D4A84B;
+  --color-cream-DEFAULT: #FAF6F1;
+  --color-brown-DEFAULT: #3D2E1E;
 }
 
 /* Reset */
