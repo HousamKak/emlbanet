@@ -1,0 +1,51 @@
+name: Deploy Cheesecake (cheesecake.emlbanet.com)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/cheesecake/**'
+      - 'packages/ui/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy-cheesecake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "deploy-cheesecake"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build cheesecake
+        run: npm run build:cheesecake
+
+      # Pushes to an external repo; requires a Personal Access Token in
+      # secrets.DEPLOY_TOKEN with repo scope on the target repo.
+      # Target repo must exist and have Pages configured to serve from
+      # the gh-pages branch.
+      - name: Deploy to target repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: ${{ github.repository_owner }}/emlbanet-cheesecake
+          publish_dir: ./apps/cheesecake/dist
+          publish_branch: gh-pages
+          cname: cheesecake.emlbanet.com

@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "name": "Em Lbanet Cheesecake",
+    "tagline": "Artisan Homemade Cheesecake",
+    "description": "Freshly baked cheesecake in rich flavors"
+  },
+  "nav": {
+    "menu": "Menu",
+    "promotions": "Favorites",
+    "contact": "Contact Us"
+  },
+  "categories": {
+    "all": "All",
+    "classic": "Classic",
+    "fruit": "Fruit",
+    "chocolate": "Chocolate",
+    "specialty": "Specialty"
+  },
+  "menu": {
+    "addToCart": "Add to Order",
+    "perSlice": "per slice",
+    "perWhole": "whole cake",
+    "serves": "Serves {{count}}",
+    "options": "Options"
+  },
+  "cart": {
+    "title": "Your Order",
+    "empty": "Cart is empty",
+    "total": "Total",
+    "orderViaWhatsapp": "Order via WhatsApp",
+    "clear": "Clear Cart",
+    "remove": "Remove",
+    "quantity": "Quantity"
+  },
+  "promotions": {
+    "title": "Most Loved",
+    "new": "New",
+    "popular": "Popular",
+    "seasonal": "Seasonal"
+  },
+  "contact": {
+    "phone": "Call Us",
+    "whatsapp": "WhatsApp",
+    "instagram": "Follow us on Instagram",
+    "location": "Find us in Beirut"
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "madeWith": "Made with love"
+  },
+  "hero": {
+    "title": "Em Lbanet Cheesecake",
+    "subtitle": "Artisan Homemade Cheesecake",
+    "cta": "View Menu",
+    "catering": "Fresh cheesecake daily — delivered to your door"
+  }
+}

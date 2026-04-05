@@ -1,0 +1,16 @@
+{
+  "parent": {
+    "name": "Em Lbanet",
+    "tagline": "One family — two flavors"
+  },
+  "homemade": {
+    "name": "Homemade Food",
+    "tagline": "Stuffed dishes, kibbeh, pastries, salads",
+    "enter": "Enter"
+  },
+  "cheesecake": {
+    "name": "Cheesecake",
+    "tagline": "Artisan homemade cheesecake",
+    "enter": "Enter"
+  }
+}

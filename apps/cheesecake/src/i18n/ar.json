@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "name": "إم البنات تشيز كيك",
+    "tagline": "تشيز كيك بيتي فاخر",
+    "description": "تشيز كيك طازج بأشهى النكهات"
+  },
+  "nav": {
+    "menu": "القائمة",
+    "promotions": "العروض",
+    "contact": "تواصل معنا"
+  },
+  "categories": {
+    "all": "الكل",
+    "classic": "كلاسيك",
+    "fruit": "فواكه",
+    "chocolate": "شوكولا",
+    "specialty": "نكهات خاصة"
+  },
+  "menu": {
+    "addToCart": "أضف للطلب",
+    "perSlice": "للقطعة",
+    "perWhole": "كاملة",
+    "serves": "تكفي {{count}} أشخاص",
+    "options": "خيارات"
+  },
+  "cart": {
+    "title": "طلبك",
+    "empty": "السلة فارغة",
+    "total": "المجموع",
+    "orderViaWhatsapp": "اطلب عبر واتساب",
+    "clear": "إفراغ السلة",
+    "remove": "إزالة",
+    "quantity": "الكمية"
+  },
+  "promotions": {
+    "title": "الأكثر طلباً",
+    "new": "جديد",
+    "popular": "الأكثر طلباً",
+    "seasonal": "موسمي"
+  },
+  "contact": {
+    "phone": "اتصل بنا",
+    "whatsapp": "واتساب",
+    "instagram": "تابعنا على انستغرام",
+    "location": "لاقونا ببيروت"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة",
+    "madeWith": "صنع بحب"
+  },
+  "hero": {
+    "title": "إم البنات تشيز كيك",
+    "subtitle": "تشيز كيك بيتي فاخر",
+    "cta": "اطلع على القائمة",
+    "catering": "تشيز كيك طازج يومياً — يصلك للباب"
+  }
+}

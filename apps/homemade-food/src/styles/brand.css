@@ -1,0 +1,10 @@
+/* ===================================
+   Homemade Food — Brand overrides
+   ===================================
+   Override any CSS custom properties from @emlbanet/ui/styles/tokens.css
+   here. Homemade Food currently inherits the default pink palette.
+   =================================== */
+
+:root {
+  /* Add brand-specific overrides here if needed */
+}

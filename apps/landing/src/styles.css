@@ -1,0 +1,377 @@
+/* ===================================
+   Em Lbanet — Landing (split-screen)
+   =================================== */
+
+:root {
+  --homemade-primary: #C2185B;       /* Deep Pink */
+  --homemade-accent: #9C27B0;        /* Purple */
+  --homemade-overlay: rgba(74, 20, 140, 0.72);
+
+  --cheesecake-primary: #C77D8C;     /* Dusty Rose */
+  --cheesecake-accent: #D4A574;      /* Caramel */
+  --cheesecake-overlay: rgba(74, 44, 42, 0.68);
+
+  --transition-easing: cubic-bezier(0.65, 0, 0.35, 1);
+  --hover-duration: 650ms;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Tajawal', 'Outfit', system-ui, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+[dir="ltr"] body {
+  font-family: 'Outfit', 'Tajawal', system-ui, sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===================================
+   Split layout
+   =================================== */
+
+.split {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.split-half {
+  position: relative;
+  flex: 1 1 50%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex-basis var(--hover-duration) var(--transition-easing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+
+/* Hover expansion (desktop) */
+@media (hover: hover) and (min-width: 769px) {
+  .split:has(.split-half:nth-child(1):hover) .split-half:nth-child(1) { flex-basis: 62%; }
+  .split:has(.split-half:nth-child(1):hover) .split-half:nth-child(3) { flex-basis: 38%; }
+  .split:has(.split-half:nth-child(3):hover) .split-half:nth-child(1) { flex-basis: 38%; }
+  .split:has(.split-half:nth-child(3):hover) .split-half:nth-child(3) { flex-basis: 62%; }
+}
+
+/* Background layers */
+.split-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform var(--hover-duration) var(--transition-easing), filter var(--hover-duration) var(--transition-easing);
+  z-index: 1;
+}
+
+.split-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transition: opacity var(--hover-duration) var(--transition-easing);
+}
+
+.split-half:hover .split-bg {
+  transform: scale(1.06);
+  filter: saturate(1.15) brightness(1.05);
+}
+
+.split-half:hover .split-overlay {
+  opacity: 0.78;
+}
+
+/* Homemade side */
+.homemade .split-bg {
+  background-image: url('/images/homemade-bg.jpg');
+  background-color: #4A148C;
+}
+.homemade .split-overlay {
+  background: linear-gradient(
+    135deg,
+    var(--homemade-overlay) 0%,
+    rgba(194, 24, 91, 0.55) 100%
+  );
+  opacity: 0.85;
+}
+
+/* Cheesecake side */
+.cheesecake .split-bg {
+  background-image: url('/images/cheesecake-bg.jpg');
+  background-color: #C77D8C;
+}
+.cheesecake .split-overlay {
+  background: linear-gradient(
+    135deg,
+    var(--cheesecake-overlay) 0%,
+    rgba(199, 125, 140, 0.55) 100%
+  );
+  opacity: 0.85;
+}
+
+/* ===================================
+   Content inside each half
+   =================================== */
+
+.split-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 2rem;
+  max-width: 560px;
+  color: #fff;
+  transition: transform var(--hover-duration) var(--transition-easing);
+}
+
+.split-half:hover .split-content {
+  transform: translateY(-6px);
+}
+
+.split-parent-mark {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.split-title {
+  font-family: 'Playfair Display', 'Tajawal', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+[dir="rtl"] .split-title {
+  font-family: 'Tajawal', serif;
+  letter-spacing: 0;
+}
+
+.split-tagline {
+  font-size: clamp(0.95rem, 1.3vw, 1.125rem);
+  font-weight: 400;
+  opacity: 0.92;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  max-width: 42ch;
+  margin-inline: auto;
+}
+
+.split-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 2rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 280ms var(--transition-easing);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.split-half:hover .split-cta {
+  background: #fff;
+  color: #1a0a1a;
+  border-color: #fff;
+  transform: scale(1.03);
+}
+
+.split-cta svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: transform 280ms var(--transition-easing);
+}
+
+[dir="rtl"] .split-cta svg {
+  transform: scaleX(-1);
+}
+
+.split-half:hover .split-cta svg {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .split-half:hover .split-cta svg {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* ===================================
+   Center divider with parent logo
+   =================================== */
+
+.split-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  transition: transform var(--hover-duration) var(--transition-easing), box-shadow var(--hover-duration) var(--transition-easing);
+  pointer-events: none;
+}
+
+.split-divider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split:hover .split-divider {
+  transform: translate(-50%, -50%) scale(0.88);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ===================================
+   Language toggle (top-right)
+   =================================== */
+
+.landing-lang-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+[dir="rtl"] .landing-lang-toggle {
+  right: auto;
+  left: 1.25rem;
+}
+
+.landing-lang-toggle:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===================================
+   Parent tagline (bottom center)
+   =================================== */
+
+.landing-parent-tagline {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ===================================
+   Mobile (stacked vertically)
+   =================================== */
+
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+
+  .split-half {
+    flex: 1 1 50%;
+  }
+
+  .split-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .split-divider {
+    width: 68px;
+    height: 68px;
+    top: 50%;
+    left: 50%;
+  }
+
+  .split-parent-mark {
+    font-size: 0.65rem;
+    margin-bottom: 1rem;
+  }
+
+  .split-tagline {
+    margin-bottom: 1.5rem;
+  }
+
+  .split-cta {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .landing-parent-tagline {
+    font-size: 0.65rem;
+    bottom: 0.75rem;
+  }
+
+  /* Tap-triggered active state instead of hover */
+  .split-half:active .split-bg {
+    transform: scale(1.04);
+  }
+  .split-half:active .split-cta {
+    background: #fff;
+    color: #1a0a1a;
+  }
+}

@@ -1,0 +1,32 @@
+/* ===================================
+   Cheesecake — Brand overrides
+   ===================================
+   Dusty rose + warm cream + espresso brown.
+   A softer, warmer palette than the homemade food brand.
+   =================================== */
+
+:root {
+  /* Dusty rose primary */
+  --color-primary: #C77D8C;           /* Dusty Rose */
+  --color-primary-light: #E8B4BE;     /* Soft Rose */
+  --color-primary-dark: #9B5A6A;      /* Deep Rose */
+
+  /* Caramel gold accent */
+  --color-secondary: #D4A574;         /* Caramel */
+  --color-secondary-light: #E8C9A3;   /* Light Caramel */
+
+  /* Warm neutrals */
+  --color-tertiary: #A67B5B;          /* Coffee */
+  --color-tertiary-light: #C19A7F;    /* Light Coffee */
+
+  /* Backgrounds */
+  --color-cream: #FFF5ED;             /* Warm Cream */
+  --color-cream-dark: #F5E6D3;        /* Toasted Cream */
+
+  /* Text */
+  --color-brown: #4A2C2A;             /* Espresso */
+  --color-brown-light: #7A5548;       /* Medium Roast */
+
+  /* Gold accent */
+  --color-gold: #D4A574;              /* Caramel Gold */
+}
